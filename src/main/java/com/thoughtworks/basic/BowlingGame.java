@@ -21,7 +21,9 @@ public class BowlingGame {
             }
 
             currentFrame = new Frame();
-            frames.add(currentFrame);
+            if (frames.size() < FRAME_ALL_BALLS) {
+                frames.add(currentFrame);
+            }
         }
 
         currentFrame.roll(hits);
@@ -30,7 +32,7 @@ public class BowlingGame {
             currentFrame = null;
         }
 
-        if (frames.size() == BOWLING_GAME_TIMES + 1 && frames.get(BOWLING_GAME_TIMES - 2).getScores() > FRAME_ALL_BALLS) {
+        if (frames.size() == BOWLING_GAME_TIMES && frames.get(BOWLING_GAME_TIMES - 1).getScores() > FRAME_ALL_BALLS) {
             isEnd =  true;
         }
     }
@@ -58,13 +60,11 @@ public class BowlingGame {
 
     public String showFramesScores() {
         StringBuilder stringBuilder = new StringBuilder();
-        int sizeOfFrames = frames.size();
-        if (sizeOfFrames > 0) {
+        if (frames.size() > 0) {
             stringBuilder.append(frames.get(0).getScores());
         }
-        if (sizeOfFrames > 1) {
-            int maxOfFrameSize = sizeOfFrames < BOWLING_GAME_TIMES ? sizeOfFrames : BOWLING_GAME_TIMES;
-            for (int i = 1; i < maxOfFrameSize; i++) {
+        if (frames.size() > 1) {
+            for (int i = 1; i < frames.size(); i++) {
                 stringBuilder.append(SEG).append(frames.get(i).getScores());
             }
         }

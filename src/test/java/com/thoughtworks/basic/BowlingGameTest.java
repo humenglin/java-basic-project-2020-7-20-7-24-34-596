@@ -294,4 +294,34 @@ public class BowlingGameTest {
 
         Assert.assertEquals("15|15|15|15|15|15|15|15|15|15", actual);
     }
+
+    @Test
+    public void should_return_150_when_get_scores_given_hit_5_balls_once_and_5_balls_twice_per_frame() {
+        BowlingGame bowlingGame = new BowlingGame();
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+
+        int actual = bowlingGame.getScores();
+
+        Assert.assertEquals(150, actual);
+    }
 }
