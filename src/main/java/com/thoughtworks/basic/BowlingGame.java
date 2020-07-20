@@ -5,10 +5,12 @@ import java.util.List;
 
 public class BowlingGame {
     public static final int BOWLING_GAME_TIMES = 10;
+    public static final int FRAME_ALL_BALLS = 10;
     public static final String SEG = "|";
     private List<Frame> frames = new ArrayList<>();
     private Frame currentFrame;
     private AdjacentFrame adjacentFrame;
+    private boolean isEnd;
 
     public void roll(int hits) {
         if (currentFrame == null) {
@@ -27,6 +29,10 @@ public class BowlingGame {
         if (currentFrame.isEnd()) {
             currentFrame = null;
         }
+
+        if (frames.size() == BOWLING_GAME_TIMES + 1 && frames.get(BOWLING_GAME_TIMES - 2).getScores() > FRAME_ALL_BALLS) {
+            isEnd =  true;
+        }
     }
 
     public int getScores() {
@@ -38,10 +44,16 @@ public class BowlingGame {
     }
 
     public boolean isEnd() {
-        if (frames.size() == BOWLING_GAME_TIMES && frames.get(BOWLING_GAME_TIMES - 1).isEnd()) {
+        if (isEnd == true) {
             return true;
         }
-        return false;
+
+        if (frames.size() == BOWLING_GAME_TIMES && frames.get(BOWLING_GAME_TIMES - 1).isEnd() && !frames.get(BOWLING_GAME_TIMES - 1).isSpare()) {
+            isEnd =  true;
+        } else {
+            isEnd =  false;
+        }
+        return isEnd;
     }
 
     public String showFramesScores() {

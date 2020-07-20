@@ -206,4 +206,63 @@ public class BowlingGameTest {
         Assert.assertEquals("15|5", actual);
     }
 
+    @Test
+    public void should_return_false_when_roll_given_hit_5_balls_20th() {
+        BowlingGame bowlingGame = new BowlingGame();
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+
+        boolean actual = bowlingGame.isEnd();
+
+        Assert.assertFalse(actual);
+    }
+
+    @Test
+    public void should_return_true_when_roll_given_hit_5_balls_21th() {
+        BowlingGame bowlingGame = new BowlingGame();
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+
+        boolean actual = bowlingGame.isEnd();
+
+        Assert.assertTrue(actual);
+    }
+
 }
