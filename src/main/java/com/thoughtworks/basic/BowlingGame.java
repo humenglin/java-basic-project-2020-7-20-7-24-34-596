@@ -58,11 +58,13 @@ public class BowlingGame {
 
     public String showFramesScores() {
         StringBuilder stringBuilder = new StringBuilder();
-        if (frames.size() > 0) {
+        int sizeOfFrames = frames.size();
+        if (sizeOfFrames > 0) {
             stringBuilder.append(frames.get(0).getScores());
         }
-        if (frames.size() > 1) {
-            for (int i = 1; i < frames.size(); i++) {
+        if (sizeOfFrames > 1) {
+            int maxOfFrameSize = sizeOfFrames < BOWLING_GAME_TIMES ? sizeOfFrames : BOWLING_GAME_TIMES;
+            for (int i = 1; i < maxOfFrameSize; i++) {
                 stringBuilder.append(SEG).append(frames.get(i).getScores());
             }
         }
