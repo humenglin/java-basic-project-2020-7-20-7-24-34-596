@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BowlingGame {
+    public static final int BOWLING_GAME_TIMES = 10;
     private List<Frame> frames = new ArrayList<>();
     private Frame currentFrame;
 
@@ -21,5 +22,12 @@ public class BowlingGame {
             scores += frame.getScores();
         }
         return scores;
+    }
+
+    public boolean isEnd() {
+        if (frames.size() == BOWLING_GAME_TIMES) {
+            return true;
+        }
+        return false;
     }
 }

@@ -24,4 +24,14 @@ public class BowlingGameTest {
 
         Assert.assertEquals(3, actual);
     }
+
+    @Test
+    public void should_return_false_when_roll_once() {
+        BowlingGame bowlingGame = new BowlingGame();
+        bowlingGame.roll(1);
+
+        boolean actual = bowlingGame.isEnd();
+
+        Assert.assertFalse(actual);
+    }
 }
