@@ -34,4 +34,14 @@ public class BowlingGameTest {
 
         Assert.assertFalse(actual);
     }
+
+    @Test
+    public void should_return_1_when_show_frames_scores_given_roll_once() {
+        BowlingGame bowlingGame = new BowlingGame();
+        bowlingGame.roll(1);
+
+        String actual = bowlingGame.showFramesScores();
+
+        Assert.assertEquals("1", actual);
+    }
 }
