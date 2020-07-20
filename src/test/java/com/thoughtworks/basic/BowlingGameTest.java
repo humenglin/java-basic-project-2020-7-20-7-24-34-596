@@ -55,4 +55,16 @@ public class BowlingGameTest {
 
         Assert.assertEquals(7, actual);
     }
+
+    @Test
+    public void should_return_7_1_when_show_frames_scores_given_hit_3_balls_once_and_4_balls_twice_and_hit_1_ball_third() {
+        BowlingGame bowlingGame = new BowlingGame();
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(1);
+
+        String actual = bowlingGame.showFramesScores();
+
+        Assert.assertEquals("7|1", actual);
+    }
 }

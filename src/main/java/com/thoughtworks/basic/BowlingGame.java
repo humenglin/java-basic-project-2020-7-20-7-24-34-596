@@ -14,7 +14,12 @@ public class BowlingGame {
             currentFrame = new Frame();
             frames.add(currentFrame);
         }
+
         currentFrame.roll(hits);
+
+        if (currentFrame.isEnd()) {
+            currentFrame = null;
+        }
     }
 
     public int getScores() {
