@@ -16,13 +16,24 @@ public class FrameTest {
     }
 
     @Test
-    public void should_return_6_when_roll_given_hit_6_ball() {
+    public void should_return_6_when_roll_given_hit_6_balls() {
         Frame frame = new Frame();
         frame.roll(6);
 
         int actual = frame.getScores();
 
         Assert.assertEquals(6, actual);
+    }
+
+    @Test
+    public void should_return_3_when_roll_given_hit_1_ball_once_and_hit_2_balls_twice() {
+        Frame frame = new Frame();
+        frame.roll(1);
+        frame.roll(2);
+
+        int actual = frame.getScores();
+
+        Assert.assertEquals(3, actual);
     }
 
     @Test
