@@ -1,5 +1,7 @@
 package com.thoughtworks.basic;
 
+import com.thoughtworks.basic.exception.TheFrameIsEndException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +10,9 @@ public class Frame {
     private List<Integer> rolls = new ArrayList<>();
 
     public void roll(int hits) {
+        if (isEnd()) {
+            throw new TheFrameIsEndException();
+        }
         rolls.add(hits);
     }
 

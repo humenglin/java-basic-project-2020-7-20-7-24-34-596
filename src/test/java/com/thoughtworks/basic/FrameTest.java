@@ -1,5 +1,6 @@
 package com.thoughtworks.basic;
 
+import com.thoughtworks.basic.exception.TheFrameIsEndException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -55,5 +56,13 @@ public class FrameTest {
         boolean actual = frame.isEnd();
 
         Assert.assertTrue(actual);
+    }
+
+    @Test(expected = TheFrameIsEndException.class)
+    public void should_throw_exception_when_roll_third() {
+        Frame frame = new Frame();
+        frame.roll(1);
+        frame.roll(1);
+        frame.roll(1);
     }
 }
