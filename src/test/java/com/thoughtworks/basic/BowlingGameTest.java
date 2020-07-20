@@ -136,4 +136,32 @@ public class BowlingGameTest {
 
         Assert.assertTrue(actual);
     }
+
+    @Test
+    public void should_return_false_when_roll_19th() {
+        BowlingGame bowlingGame = new BowlingGame();
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+
+        boolean actual = bowlingGame.isEnd();
+
+        Assert.assertFalse(actual);
+    }
 }

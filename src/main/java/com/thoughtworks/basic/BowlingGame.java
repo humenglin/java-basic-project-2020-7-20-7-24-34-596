@@ -31,7 +31,7 @@ public class BowlingGame {
     }
 
     public boolean isEnd() {
-        if (frames.size() == BOWLING_GAME_TIMES) {
+        if (frames.size() == BOWLING_GAME_TIMES && frames.get(BOWLING_GAME_TIMES - 1).isEnd()) {
             return true;
         }
         return false;
