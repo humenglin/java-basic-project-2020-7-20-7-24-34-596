@@ -7,7 +7,9 @@ import java.util.List;
 
 public class Frame {
     public static final int FRAME_ROLL_TIMES = 2;
+    public static final int FRAME_ALL_BALLS = 10;
     private List<Integer> rolls = new ArrayList<>();
+    private int frameScores;
 
     public void roll(int hits) {
         if (isEnd()) {
@@ -17,6 +19,10 @@ public class Frame {
     }
 
     public int getScores() {
+        if (frameScores > 0) {
+            return frameScores;
+        }
+
         int scores = 0;
         for (int roll : rolls) {
             scores += roll;
@@ -29,5 +35,13 @@ public class Frame {
             return true;
         }
         return false;
+    }
+
+    public void updateFrameScores(int frameScores) {
+        this.frameScores = frameScores;
+    }
+
+    public boolean isSpare() {
+        return getScores() == FRAME_ALL_BALLS;
     }
 }
