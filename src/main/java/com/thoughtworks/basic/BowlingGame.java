@@ -8,9 +8,16 @@ public class BowlingGame {
     public static final String SEG = "|";
     private List<Frame> frames = new ArrayList<>();
     private Frame currentFrame;
+    private AdjacentFrame adjacentFrame;
 
     public void roll(int hits) {
         if (currentFrame == null) {
+            int existedFrameNum = frames.size();
+            if (existedFrameNum > 0 && frames.get(existedFrameNum - 1).isSpare()) {
+                adjacentFrame = new AdjacentFrame(frames.get(existedFrameNum - 1), hits);
+                adjacentFrame.updateLastFrameScores();
+            }
+
             currentFrame = new Frame();
             frames.add(currentFrame);
         }
