@@ -164,4 +164,34 @@ public class BowlingGameTest {
 
         Assert.assertFalse(actual);
     }
+
+    @Test
+    public void should_return_string_when_roll_given_hit_3_balls_once_and_4_balls_twice_per_frame() {
+        BowlingGame bowlingGame = new BowlingGame();
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+
+        String actual = bowlingGame.showFramesScores();
+
+        Assert.assertEquals("7|7|7|7|7|7|7|7|7|7", actual);
+    }
+
 }
