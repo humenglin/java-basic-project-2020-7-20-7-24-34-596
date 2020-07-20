@@ -67,4 +67,15 @@ public class BowlingGameTest {
 
         Assert.assertEquals("7|1", actual);
     }
+
+    @Test
+    public void should_return_false_when_roll_twice() {
+        BowlingGame bowlingGame = new BowlingGame();
+        bowlingGame.roll(3);
+        bowlingGame.roll(4);
+
+        boolean actual = bowlingGame.isEnd();
+
+        Assert.assertFalse(actual);
+    }
 }
