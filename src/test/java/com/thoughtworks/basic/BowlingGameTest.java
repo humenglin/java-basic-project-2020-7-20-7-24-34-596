@@ -82,26 +82,10 @@ public class BowlingGameTest {
     @Test
     public void should_return_70_when_roll_given_hit_3_balls_once_and_4_balls_twice_per_frame() {
         BowlingGame bowlingGame = new BowlingGame();
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
+        for (int i = 0; i < 10; i++) {
+            bowlingGame.roll(3);
+            bowlingGame.roll(4);
+        }
 
         int actual = bowlingGame.getScores();
 
@@ -111,26 +95,10 @@ public class BowlingGameTest {
     @Test
     public void should_return_true_when_roll_given_hit_3_balls_once_and_4_balls_twice_per_frame() {
         BowlingGame bowlingGame = new BowlingGame();
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
+        for (int i = 0; i < 10; i++) {
+            bowlingGame.roll(3);
+            bowlingGame.roll(4);
+        }
 
         boolean actual = bowlingGame.isEnd();
 
@@ -140,24 +108,10 @@ public class BowlingGameTest {
     @Test
     public void should_return_false_when_roll_19th() {
         BowlingGame bowlingGame = new BowlingGame();
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
+        for (int i = 0; i < 9; i++) {
+            bowlingGame.roll(3);
+            bowlingGame.roll(4);
+        }
         bowlingGame.roll(3);
 
         boolean actual = bowlingGame.isEnd();
@@ -168,26 +122,10 @@ public class BowlingGameTest {
     @Test
     public void should_return_string_when_roll_given_hit_3_balls_once_and_4_balls_twice_per_frame() {
         BowlingGame bowlingGame = new BowlingGame();
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
-        bowlingGame.roll(3);
-        bowlingGame.roll(4);
+        for (int i = 0; i < 10; i++) {
+            bowlingGame.roll(3);
+            bowlingGame.roll(4);
+        }
 
         String actual = bowlingGame.showFramesScores();
 
@@ -209,26 +147,10 @@ public class BowlingGameTest {
     @Test
     public void should_return_false_when_roll_given_hit_5_balls_20th() {
         BowlingGame bowlingGame = new BowlingGame();
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
+        for (int i = 0; i < 10; i++) {
+            bowlingGame.roll(5);
+            bowlingGame.roll(5);
+        }
 
         boolean actual = bowlingGame.isEnd();
 
@@ -238,26 +160,10 @@ public class BowlingGameTest {
     @Test
     public void should_return_true_when_roll_given_hit_5_balls_21th() {
         BowlingGame bowlingGame = new BowlingGame();
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
+        for (int i = 0; i < 10; i++) {
+            bowlingGame.roll(5);
+            bowlingGame.roll(5);
+        }
         bowlingGame.roll(5);
 
         boolean actual = bowlingGame.isEnd();
@@ -268,26 +174,10 @@ public class BowlingGameTest {
     @Test
     public void should_return_String_when_show_frames_scores_given_hit_5_balls_once_and_5_balls_twice_per_frame() {
         BowlingGame bowlingGame = new BowlingGame();
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
+        for (int i = 0; i < 10; i++) {
+            bowlingGame.roll(5);
+            bowlingGame.roll(5);
+        }
         bowlingGame.roll(5);
 
         String actual = bowlingGame.showFramesScores();
@@ -298,26 +188,10 @@ public class BowlingGameTest {
     @Test
     public void should_return_150_when_get_scores_given_hit_5_balls_once_and_5_balls_twice_per_frame() {
         BowlingGame bowlingGame = new BowlingGame();
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
-        bowlingGame.roll(5);
+        for (int i = 0; i < 10; i++) {
+            bowlingGame.roll(5);
+            bowlingGame.roll(5);
+        }
         bowlingGame.roll(5);
 
         int actual = bowlingGame.getScores();
